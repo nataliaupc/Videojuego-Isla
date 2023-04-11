@@ -74,19 +74,19 @@ public class EventManager : MonoBehaviour
                 break;
         }
 
-        //player dies if they go fishing while storm event is happening
-        if (fishingScript.goneFishing == true && storm == true)
-            SceneManager.LoadScene(3);
-
-        //player dies if they go looking for water while forest event is happening
-        if (bucketScript.bucketFilled == true && forest == true)
-            SceneManager.LoadScene(3);
+       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //player dies if they go fishing while storm event is happening
+        if (fishingScript.goneFishing == true && storm == true)
+            SceneManager.LoadScene(2);
+
+        //player dies if they go looking for water while forest event is happening
+        if (bucketScript.bucketFilled == true && forest == true)
+            SceneManager.LoadScene(2);
     }
 }

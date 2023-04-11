@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330556630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
@@ -1099,6 +1099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a061690eca919e42a9cf8162c3869ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  events: 0
+  nothing: 0
+  storm: 0
+  forest: 0
+  rescue: 0
   fireScript: {fileID: 97986146}
   fireCollider: {fileID: 97986144}
   fishingScript: {fileID: 1425712184}
@@ -2512,9 +2517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27715cf21c23c0241a2e935ea987aff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  groundDrag: 1
-  jumpForce: 5
+  moveSpeed: 10
+  groundDrag: 10
+  jumpForce: 0
   jumpCooldown: 0
   airMultiplier: 1
   walkSpeed: 0

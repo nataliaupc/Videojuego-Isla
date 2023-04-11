@@ -16,11 +16,6 @@ public class NearBoat : MonoBehaviour
             triggerActive = true;
             text.SetActive(true);
             //print("Collision detected");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                goneFishing = true;
-                SceneManager.LoadScene(2);
-            }
         }
     }
 
@@ -30,6 +25,19 @@ public class NearBoat : MonoBehaviour
         {
             triggerActive = false;
             text.SetActive(false);
+        }
+    }
+
+    public void Update()
+    {
+        if (triggerActive == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                goneFishing = true;
+                //SceneManager.LoadScene(0);
+                Debug.Log("Pressing select button");
+            }
         }
     }
 }

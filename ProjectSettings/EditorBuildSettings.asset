@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: 0e6470dc412dc934a8e6b749b22dde29
+  - enabled: 1
+    path: Assets/Scenes/Opening Scene.unity
+    guid: 1b8d9a74e63b2524fb4b5d301557f308
+  - enabled: 1
+    path: Assets/Scenes/Ending Scenes/Death Scene.unity
+    guid: b6f8e3805ec28724ba104cfc856290a2
+  - enabled: 1
+    path: Assets/Scenes/Ending Scenes/Rescue Scene.unity
+    guid: 7a90cc3c86f510c408b6a84f492ab76c
+  - enabled: 1
+    path: Assets/Scenes/Ending Scenes/Survival Scene.unity
+    guid: f829820a9ebf4884e9cfa9317dacb713
   m_configObjects: {}

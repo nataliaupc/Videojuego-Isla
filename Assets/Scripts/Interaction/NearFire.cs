@@ -14,12 +14,8 @@ public class NearFire : MonoBehaviour
         {
             triggerActive = true;
             text.SetActive(true);
-            //print("Collision detected");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                fireLit = true;
-                SceneManager.LoadScene(2);
-            }
+            print("Collision detected");
+            
         }
     }
 
@@ -31,5 +27,18 @@ public class NearFire : MonoBehaviour
             text.SetActive(false);
         }
     }
-   
+
+    public void Update()
+    {
+        if (triggerActive == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                fireLit = true;
+                //SceneManager.LoadScene(0);
+                Debug.Log("Pressing select button");
+            }
+        }
+    }
+
 }

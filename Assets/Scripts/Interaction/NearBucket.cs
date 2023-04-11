@@ -15,11 +15,7 @@ public class NearBucket : MonoBehaviour
             triggerActive = true;
             text.SetActive(true);
             //print("Collision detected");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                bucketFilled = true;
-                SceneManager.LoadScene(2);
-            }
+            
         }
     }
 
@@ -29,6 +25,19 @@ public class NearBucket : MonoBehaviour
         {
             triggerActive = false;
             text.SetActive(false);
+        }
+    }
+
+    public void Update()
+    {
+        if (triggerActive == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                bucketFilled = true;
+                //SceneManager.LoadScene(0);
+                Debug.Log("Pressing select button");
+            }
         }
     }
 }
