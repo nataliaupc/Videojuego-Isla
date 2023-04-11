@@ -37,15 +37,21 @@ public class EventManager : MonoBehaviour
     private GameObject tires;
 
     //substitute bools for event manager
-    static bool fireBool;
-    static bool hutBool;
-    static bool fishBool;
-    static bool waterBool;
+    static bool fireBool = false;
+    static bool hutBool = false;
+    static bool fishBool = false;
+    static bool waterBool = false;
 
     //Alpha version canvas to denote event happening 
     public GameObject forestCanvas;
     public GameObject stormCanvas;
     public GameObject rescueCanvas;
+
+    //Alpha version canvas to denote interaction done by player 
+    public GameObject fireCanvas;
+    public GameObject waterCanvas;
+    public GameObject hutCanvas;
+    public GameObject fishCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -100,7 +106,26 @@ public class EventManager : MonoBehaviour
 
         //player survives if they have all necessities 
         if (waterBool == true && fishBool == true && fireBool == true && hutBool == true)
+        {
+            waterBool = false;
+            fishBool = false;
+            fireBool = false;
+            hutBool = false;
             SceneManager.LoadScene(4);
+        }
+
+        //QOL text on screen to let player know what they have interacted with
+        if(waterBool == true)
+            waterCanvas.SetActive(true);
+
+        if(fishBool == true)
+            fishCanvas.SetActive(true);
+
+        if(fireBool == true)
+            fireCanvas.SetActive(true);
+
+        if(hutBool == true)
+            hutCanvas.SetActive(true);
 
     }
 
@@ -109,7 +134,13 @@ public class EventManager : MonoBehaviour
     {
         //player dies if they go fishing while storm event is happening
         if (fishingScript.goneFishing == true && storm == true)
+        {
+            waterBool = false;
+            fishBool = false;
+            fireBool = false;
+            hutBool = false;
             SceneManager.LoadScene(2);
+        }
         else if (fishingScript.goneFishing == true)
         {
             fishBool = true;
@@ -118,7 +149,13 @@ public class EventManager : MonoBehaviour
 
         //player dies if they go looking for water while forest event is happening
         if (bucketScript.bucketFilled == true && forest == true)
+        {
+            waterBool = false;
+            fishBool = false;
+            fireBool = false;
+            hutBool = false;
             SceneManager.LoadScene(2);
+        }
         else if (bucketScript.bucketFilled == true)
         {
             waterBool = true;
@@ -127,7 +164,13 @@ public class EventManager : MonoBehaviour
 
         //if fire is lit and a tire is thrown in during the rescue event 
         if (fireBool == true && rescue == true && tireScript.tireOnFire == true)
+        {
+            waterBool = false;
+            fishBool = false;
+            fireBool = false;
+            hutBool = false;
             SceneManager.LoadScene(3);
+        }
 
         //other actions which have no interaction as of alpha
         if (fireScript.fireLit == true)
