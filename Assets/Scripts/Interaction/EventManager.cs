@@ -31,6 +31,11 @@ public class EventManager : MonoBehaviour
     public GameObject bucketCollider;
     private GameObject Hut;
 
+    //objects related to the tire interaction
+    public NearTires tireScript;
+    public GameObject tireCollider;
+    private GameObject tires;
+
     //substitute bools for event manager
     static bool fireBool;
     static bool hutBool;
@@ -119,6 +124,10 @@ public class EventManager : MonoBehaviour
             waterBool = true;
             SceneManager.LoadScene(0);
         }
+
+        //if fire is lit and a tire is thrown in during the rescue event 
+        if (fireBool == true && rescue == true && tireScript.tireOnFire == true)
+            SceneManager.LoadScene(3);
 
         //other actions which have no interaction as of alpha
         if (fireScript.fireLit == true)
