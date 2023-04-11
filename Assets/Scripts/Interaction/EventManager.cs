@@ -30,7 +30,18 @@ public class EventManager : MonoBehaviour
     public NearBucket bucketScript;
     public GameObject bucketCollider;
     private GameObject Hut;
-    
+
+    //substitute bools for event manager
+    static bool fireBool;
+    static bool hutBool;
+    static bool fishBool;
+    static bool waterBool;
+
+    //Alpha version canvas to denote event happening 
+    public GameObject forestCanvas;
+    public GameObject stormCanvas;
+    public GameObject rescueCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,20 +72,30 @@ public class EventManager : MonoBehaviour
             case 1:
                 storm = true;
                 Debug.Log("Storm event");
+                stormCanvas.SetActive(true);
                 break;
             case 2:
                 forest = true;
                 Debug.Log("forest event");
+                forestCanvas.SetActive(true);
                 break;
             case 3:
                 rescue = true;
                 Debug.Log("rescue event");
+                rescueCanvas.SetActive(true);
                 break;
             default:
                 break;
         }
 
-       
+        Debug.Log(waterBool);
+        Debug.Log(fireBool);
+        Debug.Log(hutBool);
+        Debug.Log(fishBool);
+
+        //player survives if they have all necessities 
+        if (waterBool == true && fishBool == true && fireBool == true && hutBool == true)
+            SceneManager.LoadScene(4);
 
     }
 
@@ -84,9 +105,36 @@ public class EventManager : MonoBehaviour
         //player dies if they go fishing while storm event is happening
         if (fishingScript.goneFishing == true && storm == true)
             SceneManager.LoadScene(2);
+        else if (fishingScript.goneFishing == true)
+        {
+            fishBool = true;
+            SceneManager.LoadScene(0);
+        }
 
         //player dies if they go looking for water while forest event is happening
         if (bucketScript.bucketFilled == true && forest == true)
             SceneManager.LoadScene(2);
+        else if (bucketScript.bucketFilled == true)
+        {
+            waterBool = true;
+            SceneManager.LoadScene(0);
+        }
+
+        //other actions which have no interaction as of alpha
+        if (fireScript.fireLit == true)
+        {
+            fireBool = true;
+            SceneManager.LoadScene(0);
+        }
+
+        if (constructionScript.hutBuilt == true)
+        {
+            hutBool = true;
+            SceneManager.LoadScene(0);
+        }
+
+        
+
+        
     }
 }
