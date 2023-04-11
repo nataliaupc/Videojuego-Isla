@@ -177,7 +177,7 @@ public class EventManager : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        //player dies if they go looking for water while forest event is happening
+        //player dies if they go hunting while forest event is happening
         if (huntScript.goneHunting == true && forest == true)
         {
             waterBool = false;
@@ -217,8 +217,9 @@ public class EventManager : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        
 
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
     }
 }
