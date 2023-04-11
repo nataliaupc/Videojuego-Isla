@@ -113,7 +113,7 @@ public class EventManager : MonoBehaviour
         else if (fishingScript.goneFishing == true)
         {
             fishBool = true;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         //player dies if they go looking for water while forest event is happening
@@ -122,7 +122,7 @@ public class EventManager : MonoBehaviour
         else if (bucketScript.bucketFilled == true)
         {
             waterBool = true;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         //if fire is lit and a tire is thrown in during the rescue event 
@@ -133,13 +133,13 @@ public class EventManager : MonoBehaviour
         if (fireScript.fireLit == true)
         {
             fireBool = true;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         if (constructionScript.hutBuilt == true)
         {
             hutBool = true;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         
