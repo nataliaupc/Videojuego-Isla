@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     public bool storm;
     public bool forest;
     public bool rescue;
+    public bool hunt;
     
     //objects related to the bonefire interaction
     public NearFire fireScript;
@@ -36,11 +37,17 @@ public class EventManager : MonoBehaviour
     public GameObject tireCollider;
     private GameObject tires;
 
+    //objects related to hunting
+    public NearWeapons huntScript;
+    public GameObject weaponsCollider;
+    private GameObject weapons;
+
     //substitute bools for event manager
     static bool fireBool = false;
     static bool hutBool = false;
     static bool fishBool = false;
     static bool waterBool = false;
+    static bool weaponBool = false;
 
     //Alpha version canvas to denote event happening 
     public GameObject forestCanvas;
@@ -52,6 +59,7 @@ public class EventManager : MonoBehaviour
     public GameObject waterCanvas;
     public GameObject hutCanvas;
     public GameObject fishCanvas;
+    public GameObject weaponCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -103,6 +111,7 @@ public class EventManager : MonoBehaviour
         Debug.Log(fireBool);
         Debug.Log(hutBool);
         Debug.Log(fishBool);
+        Debug.Log(weaponBool);
 
         //player survives if they have all necessities 
         if (waterBool == true && fishBool == true && fireBool == true && hutBool == true)
@@ -111,6 +120,7 @@ public class EventManager : MonoBehaviour
             fishBool = false;
             fireBool = false;
             hutBool = false;
+            weaponBool = false;
             SceneManager.LoadScene(4);
         }
 
@@ -127,6 +137,9 @@ public class EventManager : MonoBehaviour
         if(hutBool == true)
             hutCanvas.SetActive(true);
 
+        if (weaponBool == true)
+            weaponCanvas.SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -139,6 +152,7 @@ public class EventManager : MonoBehaviour
             fishBool = false;
             fireBool = false;
             hutBool = false;
+            weaponBool = false;
             SceneManager.LoadScene(2);
         }
         else if (fishingScript.goneFishing == true)
@@ -154,11 +168,28 @@ public class EventManager : MonoBehaviour
             fishBool = false;
             fireBool = false;
             hutBool = false;
+            weaponBool = false;
             SceneManager.LoadScene(2);
         }
         else if (bucketScript.bucketFilled == true)
         {
             waterBool = true;
+            SceneManager.LoadScene(1);
+        }
+
+        //player dies if they go looking for water while forest event is happening
+        if (huntScript.goneHunting == true && forest == true)
+        {
+            waterBool = false;
+            fishBool = false;
+            fireBool = false;
+            hutBool = false;
+            weaponBool = false;
+            SceneManager.LoadScene(2);
+        }
+        else if (huntScript.goneHunting == true)
+        {
+            weaponBool = true;
             SceneManager.LoadScene(1);
         }
 
@@ -169,6 +200,7 @@ public class EventManager : MonoBehaviour
             fishBool = false;
             fireBool = false;
             hutBool = false;
+            weaponBool = false;
             SceneManager.LoadScene(3);
         }
 
