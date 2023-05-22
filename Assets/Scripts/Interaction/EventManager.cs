@@ -61,6 +61,18 @@ public class EventManager : MonoBehaviour
     public GameObject fishCanvas;
     public GameObject weaponCanvas;
 
+    //Objects related to events 
+    public GameObject forestEvent;
+    public GameObject stormEvent;
+    public GameObject rescueEvent;
+
+    //Objects related to choices
+    public GameObject fireChoice;
+    public GameObject waterChoice;
+    public GameObject hutChoice;
+    public GameObject fishChoice;
+    public GameObject weaponChoice;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +114,7 @@ public class EventManager : MonoBehaviour
                 rescue = true;
                 Debug.Log("rescue event");
                 rescueCanvas.SetActive(true);
+                rescueEvent.SetActive(true);
                 break;
             default:
                 break;
