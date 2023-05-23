@@ -145,9 +145,11 @@ public class EventManager : MonoBehaviour
             fishCanvas.SetActive(true);
 
         if(fireBool == true)
-            fireCanvas.SetActive(true);
+            fireChoice.SetActive(true);
+        //fireCanvas.SetActive(true);
 
-        if(hutBool == true)
+
+        if (hutBool == true)
             hutCanvas.SetActive(true);
 
         if (weaponBool == true)
