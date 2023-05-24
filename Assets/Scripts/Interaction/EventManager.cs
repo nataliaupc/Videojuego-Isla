@@ -70,6 +70,7 @@ public class EventManager : MonoBehaviour
     public GameObject fireChoice;
     public GameObject waterChoice;
     public GameObject hutChoice;
+    public GameObject hutMats;
     public GameObject fishChoice;
     public GameObject weaponChoice;
 
@@ -141,8 +142,9 @@ public class EventManager : MonoBehaviour
         if(waterBool == true)
             waterCanvas.SetActive(true);
 
-        if(fishBool == true)
-            fishCanvas.SetActive(true);
+        if (fishBool == true)
+            fishChoice.SetActive(true);
+        //fishCanvas.SetActive(true);
 
         if(fireBool == true)
             fireChoice.SetActive(true);
@@ -150,7 +152,11 @@ public class EventManager : MonoBehaviour
 
 
         if (hutBool == true)
-            hutCanvas.SetActive(true);
+        {
+            hutChoice.SetActive(true);
+            hutMats.SetActive(false);
+            //hutCanvas.SetActive(true);
+        }
 
         if (weaponBool == true)
             weaponCanvas.SetActive(true);
