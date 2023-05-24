@@ -138,9 +138,10 @@ public class EventManager : MonoBehaviour
             SceneManager.LoadScene(4);
         }
 
-        //QOL text on screen to let player know what they have interacted with
-        if(waterBool == true)
-            waterCanvas.SetActive(true);
+        //commented canvases are QOL text on screen to let player know what they had interacted with in alpha
+        if (waterBool == true)
+            waterChoice.SetActive(true);
+        //waterCanvas.SetActive(true);
 
         if (fishBool == true)
             fishChoice.SetActive(true);
