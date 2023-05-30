@@ -175,7 +175,7 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
         }
         else if (fishingScript.goneFishing == true)
         {

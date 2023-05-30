@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending Scenes/Survival Scene.unity
     guid: f829820a9ebf4884e9cfa9317dacb713
+  - enabled: 1
+    path: Assets/Scenes/Ending Scenes/Drowning Scene.unity
+    guid: 9bb0f7da7ebffe3408b65ac062e7730e
   m_configObjects: {}
