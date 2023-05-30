@@ -16,7 +16,7 @@ public class MenutoMain : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

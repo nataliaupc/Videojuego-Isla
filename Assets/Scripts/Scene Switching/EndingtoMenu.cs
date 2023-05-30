@@ -16,7 +16,7 @@ public class EndingtoMenu : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

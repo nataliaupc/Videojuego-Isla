@@ -135,7 +135,7 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
 
         //commented canvases are QOL text on screen to let player know what they had interacted with in alpha
@@ -175,12 +175,12 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(6);
         }
         else if (fishingScript.goneFishing == true)
         {
             fishBool = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         //player dies if they go looking for water while forest event is happening
@@ -191,12 +191,12 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         else if (bucketScript.bucketFilled == true)
         {
             waterBool = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         //player dies if they go hunting while forest event is happening
@@ -207,12 +207,12 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         else if (huntScript.goneHunting == true)
         {
             weaponBool = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         //if fire is lit and a tire is thrown in during the rescue event 
@@ -223,20 +223,20 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 
         //other actions which have no interaction as of alpha
         if (fireScript.fireLit == true)
         {
             fireBool = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
         if (constructionScript.hutBuilt == true)
         {
             hutBool = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
 
 
