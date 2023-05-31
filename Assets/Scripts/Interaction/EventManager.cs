@@ -104,17 +104,20 @@ public class EventManager : MonoBehaviour
             case 1:
                 storm = true;
                 Debug.Log("Storm event");
-                stormCanvas.SetActive(true);
+                stormEvent.SetActive(true);
+                //RenderSettings.skybox.SetColor("_Tint", Color.grey);
+                //stormCanvas.SetActive(true);
                 break;
             case 2:
                 forest = true;
                 Debug.Log("forest event");
-                forestCanvas.SetActive(true);
+                forestEvent.SetActive(true);
+                //forestCanvas.SetActive(true);
                 break;
             case 3:
                 rescue = true;
                 Debug.Log("rescue event");
-                rescueCanvas.SetActive(true);
+                //rescueCanvas.SetActive(true);
                 rescueEvent.SetActive(true);
                 break;
             default:
