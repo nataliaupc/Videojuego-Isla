@@ -105,6 +105,10 @@ public class EventManager : MonoBehaviour
                 storm = true;
                 Debug.Log("Storm event");
                 stormEvent.SetActive(true);
+                if (hutBool == false)
+                {
+                    fireBool = false;
+                }
                 //RenderSettings.skybox.SetColor("_Tint", Color.grey);
                 //stormCanvas.SetActive(true);
                 break;
@@ -131,7 +135,7 @@ public class EventManager : MonoBehaviour
         Debug.Log(weaponBool);
 
         //player survives if they have all necessities 
-        if (waterBool == true && fishBool == true && fireBool == true && hutBool == true)
+        if (waterBool == true && fishBool == true && fireBool == true && hutBool == true && weaponBool == true)
         {
             waterBool = false;
             fishBool = false;
@@ -164,11 +168,6 @@ public class EventManager : MonoBehaviour
 
         if (weaponBool == true)
             weaponCanvas.SetActive(true);
-
-        if (hutBool != true && storm == true)
-        {
-            fireBool = false;
-        }
 
     }
 
