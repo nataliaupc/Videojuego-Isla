@@ -165,6 +165,11 @@ public class EventManager : MonoBehaviour
         if (weaponBool == true)
             weaponCanvas.SetActive(true);
 
+        if (hutBool != true && storm == true)
+        {
+            fireBool = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -229,7 +234,7 @@ public class EventManager : MonoBehaviour
             SceneManager.LoadScene(4);
         }
 
-        //other actions which have no interaction as of alpha
+        
         if (fireScript.fireLit == true)
         {
             fireBool = true;
@@ -242,6 +247,7 @@ public class EventManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
