@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 public class EventManager : MonoBehaviour
 {
     //world events
@@ -74,10 +76,15 @@ public class EventManager : MonoBehaviour
     public GameObject fishChoice;
     public GameObject weaponChoice;
 
+    //text elements for day counting
+    public GameObject dayText;
+    static int dayValue;
+    TextMeshProUGUI meshproDayText;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        meshproDayText = dayText.GetComponent<TextMeshProUGUI>();
         events = Random.Range( 0, 4);
         
         //deactivate interaction colliders in case an option has been chosen (next cicle it wont show) but not for repeatable actions
@@ -142,6 +149,7 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
+            dayValue = 0;
             SceneManager.LoadScene(5);
         }
 
@@ -175,6 +183,7 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        meshproDayText.text = dayValue.ToString();
         //player dies if they go fishing while storm event is happening
         if (fishingScript.goneFishing == true && storm == true)
         {
@@ -183,11 +192,13 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
+            dayValue = 0;
             SceneManager.LoadScene(6);
         }
         else if (fishingScript.goneFishing == true)
         {
             fishBool = true;
+            dayValue += 1;
             SceneManager.LoadScene(2);
         }
 
@@ -199,11 +210,13 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
+            dayValue = 0;
             SceneManager.LoadScene(3);
         }
         else if (bucketScript.bucketFilled == true)
         {
             waterBool = true;
+            dayValue += 1;
             SceneManager.LoadScene(2);
         }
 
@@ -215,11 +228,13 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
+            dayValue = 0;
             SceneManager.LoadScene(3);
         }
         else if (huntScript.goneHunting == true)
         {
             weaponBool = true;
+            dayValue += 1;
             SceneManager.LoadScene(2);
         }
 
@@ -231,6 +246,7 @@ public class EventManager : MonoBehaviour
             fireBool = false;
             hutBool = false;
             weaponBool = false;
+            dayValue = 0;
             SceneManager.LoadScene(4);
         }
 
@@ -238,12 +254,14 @@ public class EventManager : MonoBehaviour
         if (fireScript.fireLit == true)
         {
             fireBool = true;
+            dayValue += 1;
             SceneManager.LoadScene(2);
         }
 
         if (constructionScript.hutBuilt == true)
         {
             hutBool = true;
+            dayValue += 1;
             SceneManager.LoadScene(2);
         }
 
