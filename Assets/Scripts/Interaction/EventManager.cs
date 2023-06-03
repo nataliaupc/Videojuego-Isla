@@ -167,7 +167,8 @@ public class EventManager : MonoBehaviour
         }
 
         if (weaponBool == true)
-            weaponCanvas.SetActive(true);
+            weaponChoice.SetActive(true);
+            //weaponCanvas.SetActive(true);
 
     }
 
